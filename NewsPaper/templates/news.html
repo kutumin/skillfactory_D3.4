@@ -1,0 +1,26 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+{{ flatpage.title }}
+{% endblock title %}
+
+{% block content %}
+    <h2>{{ flatpage.title }}</h2>
+    <hr>
+    <h3>НОВОСТИ</h3>
+    <i>{{ flatpage.content }} </i>
+    <br>
+    <p>здесь будет выгрузка из базы данных</p>
+    Количество новостей:
+
+    {{news.count}}
+    
+    <br>
+    Номера новостей:
+    {% if news %}
+        {% for i in news %} {{i}} {% endfor %}
+    {% else %}
+        <h2>Новостей нет!</h2>
+    {% endif %}
+
+{% endblock content %}
